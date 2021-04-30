@@ -1,0 +1,707 @@
+<div class="container">
+    <div class="content-wrapper" >
+    <!-- style="min-height: 595px;"> -->
+        <div class="" >
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#tab_1-1" data-toggle="tab" aria-expanded="true">Demographics</a></li>
+                <li class=""><a href="#tab_2-2" data-toggle="tab" aria-expanded="false">Medications</a></li>
+                <li class=""><a href="#tab_3-2" data-toggle="tab" aria-expanded="false">Notes</a></li>
+                <li class=""><a href="#tab_4-2" data-toggle="tab" aria-expanded="false">Medical Conditions</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab_1-1">
+                    <section class="content">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                <div class="info-box">
+                                    <div class="col-md-3">
+                                        <span class="info-box-icon">
+                                            <div class="pull-left image"
+                                                style="position: relative;top:50%;left: 5px;">
+                                                <img src="../../../assets/icons/user7-128x128.jpg" class="img-circle img1"
+                                                    alt="User Image">
+                                            </div>
+                                        </span>
+                                    </div>
+                                    <div class="col-md-9 p0" style="margin-top:10px" *ngIf="model.patientModel">
+                                        <span class="info-box-number" style="margin-bottom:10px">
+                                            {{model.patientModel.lastname}} {{model.patientModel.firstname}} <span>(</span>{{model.patientModel.Age}}<span><small> Yrs </small> )</span>
+                                        </span>
+                                        <table class="table table3" style="color:#226174;font-weight: 700;">
+                                            <tbody>
+                                                    <tr>
+                                                            <td style="width:100px">Date of Birth: </td>
+                                                            <td>15<sup>th</sup> June 1992</td>
+                                                          
+                                                        </tr>
+                                                <tr>
+                                                    <td>Email: </td>
+                                                    <td>{{model.patientModel.email}}</td>
+                                                  
+                                                </tr>
+                                                <tr>
+                                                        <td>Mobile: </td>
+                                                        <td colspan="3">011-474857588</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Address: </td>
+                                                        <td colspan="3">{{model.patientModel.addressLine1}},
+                                                            {{model.patientModel.city}},
+                                                            {{model.patientModel.state}},
+                                                            {{model.patientModel.zipcode}}</td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-12 col-xs-12">
+                                <div class="info-box bg_sand">
+                                    <div class="info-box-content">
+                                        <div class="col-md-12">
+                                            <div class="form-group disp_block mb5">
+                                                <label class="col-sm-12 control-label p0"
+                                                    style="font-weight: bold">Upcoming Appointments</label>
+                                            </div>
+                                            <hr>                                          
+                                            <div class="form-group disp_block mb5">
+                                                <label class="col-sm-12 control-label p0">Dr Brick Wall</label>
+                                                <div class="col-sm-12 p0">
+                                                    25-Dec-2019 at 8.00 pm
+                                                </div>
+                                            </div>                                           
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.info-box -->
+                            </div>
+                            <div class="col-md-3 col-sm-12 col-xs-12">
+                                <div class="info-box bg_dgrey">
+                                    <div class="info-box-content">
+                                        <div class="col-md-12">
+                                            <div class="form-group disp_block mb5">
+                                                <label class="col-sm-12 control-label p0" style="font-weight: bold">Past
+                                                    Appointments</label>
+                                            </div>                                            
+                                            <hr>
+                                            <div class="form-group disp_block mb5">
+                                                <label class="col-sm-12 control-label p0">Dr Brick Wall</label>
+                                                <div class="col-sm-12 p0">
+                                                    15-Dec-2019 at 8.00 pm
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.info-box -->
+                            </div>
+                        </div>
+                        <div class="row">
+                      
+                             
+                                    <div class="col-md-6 col-sm-12 col-xs-12" style="padding:20px 0 0 0">
+                                        <div class="col-lg-6 col-xs-6">
+                                            <div class="small-box bg-aqua">
+                                                <div class="inner">
+                                                    <h3>Blood Pressure</h3>
+                                                    <p>120/80<small>mm/Hg</small></p>
+                                                </div>
+                                                <div class="icon">
+                                                    <span class="icw icon_b1"></span>
+                                                </div>
+                                                <!-- <hk4 class="text-right align" style="color:#04618e">Normal</h4> -->
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xs-6">
+                                            <div class="small-box bg-aqua">
+                                                <div class="inner">
+                                                    <h3>Heart Rate</h3>
+                                                    <p>102<small>beats/min</small></p>
+                                                </div>
+                                                <div class="icon">
+                                                    <span class="icw icon_b2"></span>
+                                                </div>
+                                                <!-- <h4 class="text-right align" style="color:#04618e">Normal</h4> -->
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-lg-6 col-xs-6">
+                                            <div class="small-box bg-aqua">
+                                                <div class="inner">
+                                                    <h3>Glucose</h3>
+
+                                                    <p>100<small>mg/dl</small></p>
+                                                </div>
+                                                <div class="icon">
+                                                    <span class="icw icon_b3"></span>
+                                                </div>
+                                                <!-- <h4 class="text-right align" style="color:#e11313">Above Normal</h4> -->
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xs-6">
+                                            <div class="small-box bg-aqua">
+                                                <div class="inner">
+                                                    <h3>Weight</h3>
+
+                                                    <p>75<small>Kgs</small></p>
+                                                </div>
+                                                <div class="icon">
+                                                    <span class="icw icon_b4"></span>
+                                                </div>
+                                                <!-- <h4 class="text-right align" style="color:#e11313">Above Normal</h4> -->
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6 col-sm-12 col-xs-12" style="padding:20px 0 0 0">
+                                        <div class="col-lg-12 col-xs-12">
+                                            <div class="small-box" style="min-height: 300px;">
+                                                <div class="inner">
+                                                    <h3>Conditions</h3>
+
+                                                    <label style="color: #1f3d65;" *ngFor="let problem of problemList; let i = index" class="container_1">
+                                                            {{problem.name}}
+                                                            <input type="checkbox" checked="checked">
+                                                            <span class="checkmark"></span>
+                                                          </label>
+                                                    <!-- <ul>
+                                                        <li class="f14"
+                                                            *ngFor="let problem of problemList; let i = index">
+                                                            {{problem.name}}
+                                                        </li>
+                                                    </ul> -->
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                             
+                        
+                        </div>
+                        <!--<div class="row home_cont">
+                                    <div class="col-lg-4">
+                                        <div class="box">
+                                            <div class="box-header" style="cursor: move;">
+                                                <h3 class="box-title">Body Temperature</h3>
+                                                <div class="box-tools pull-right">
+                                                    <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                                        <i class="fa fa-minus"></i>
+                                                    </button>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown">
+                                                            <i class="fa fa-wrench"></i>
+                                                        </button>
+                                                        <ul class="dropdown-menu" role="menu">
+                                                            <li><a href="#">Action</a></li>
+                                                            <li><a href="#">Another action</a></li>
+                                                            <li><a href="#">Something else here</a></li>
+                                                            <li class="divider"></li>
+                                                            <li><a href="#">Separated link</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="box-body">
+        
+                                            </div>
+        
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="box">
+                                            <div class="box-header" style="cursor: move;">
+                                                <h3 class="box-title">Blood Type</h3>
+                                                <div class="box-tools pull-right">
+                                                    <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                                        <i class="fa fa-minus"></i>
+                                                    </button>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown">
+                                                            <i class="fa fa-wrench"></i>
+                                                        </button>
+                                                        <ul class="dropdown-menu" role="menu">
+                                                            <li><a href="#">Action</a></li>
+                                                            <li><a href="#">Another action</a></li>
+                                                            <li><a href="#">Something else here</a></li>
+                                                            <li class="divider"></li>
+                                                            <li><a href="#">Separated link</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="box-body">
+        
+                                            </div>
+        
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="box">
+                                            <div class="box-header" style="cursor: move;">
+                                                <h3 class="box-title">Blood Pressure</h3>
+                                                <div class="box-tools pull-right">
+                                                    <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                                        <i class="fa fa-minus"></i>
+                                                    </button>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown">
+                                                            <i class="fa fa-wrench"></i>
+                                                        </button>
+                                                        <ul class="dropdown-menu" role="menu">
+                                                            <li><a href="#">Action</a></li>
+                                                            <li><a href="#">Another action</a></li>
+                                                            <li><a href="#">Something else here</a></li>
+                                                            <li class="divider"></li>
+                                                            <li><a href="#">Separated link</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="box-body">
+        
+                                            </div>
+        
+                                        </div>
+                                    </div>
+                                </div>-->
+                        <!--<div class="row home_cont">
+                                    <div class="col-lg-4">
+                                        <div class="box">
+                                            <div class="box-header" style="cursor: move;">
+                                                <h3 class="box-title">Heart Rate</h3>
+                                                <div class="box-tools pull-right">
+                                                    <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                                        <i class="fa fa-minus"></i>
+                                                    </button>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown">
+                                                            <i class="fa fa-wrench"></i>
+                                                        </button>
+                                                        <ul class="dropdown-menu" role="menu">
+                                                            <li><a href="#">Action</a></li>
+                                                            <li><a href="#">Another action</a></li>
+                                                            <li><a href="#">Something else here</a></li>
+                                                            <li class="divider"></li>
+                                                            <li><a href="#">Separated link</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="box-body">
+        
+                                            </div>
+        
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="box">
+                                            <div class="box-header" style="cursor: move;">
+                                                <h3 class="box-title">Cholestrol</h3>
+                                                <div class="box-tools pull-right">
+                                                    <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                                        <i class="fa fa-minus"></i>
+                                                    </button>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown">
+                                                            <i class="fa fa-wrench"></i>
+                                                        </button>
+                                                        <ul class="dropdown-menu" role="menu">
+                                                            <li><a href="#">Action</a></li>
+                                                            <li><a href="#">Another action</a></li>
+                                                            <li><a href="#">Something else here</a></li>
+                                                            <li class="divider"></li>
+                                                            <li><a href="#">Separated link</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="box-body">
+        
+                                            </div>
+        
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="box">
+                                            <div class="box-header" style="cursor: move;">
+                                                <h3 class="box-title">Sleep Pattern</h3>
+                                                <div class="box-tools pull-right">
+                                                    <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                                        <i class="fa fa-minus"></i>
+                                                    </button>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown">
+                                                            <i class="fa fa-wrench"></i>
+                                                        </button>
+                                                        <ul class="dropdown-menu" role="menu">
+                                                            <li><a href="#">Action</a></li>
+                                                            <li><a href="#">Another action</a></li>
+                                                            <li><a href="#">Something else here</a></li>
+                                                            <li class="divider"></li>
+                                                            <li><a href="#">Separated link</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="box-body">
+        
+                                            </div>
+        
+                                        </div>
+                                    </div>
+                                </div>-->
+                        <!--<div class="row home_cont">
+                                    <div class="col-lg-8">
+                                        <div class="box">
+                                            <div class="box-header" style="cursor: move;">
+                                                <h3 class="box-title">Statistics</h3>
+                                                <div class="box-tools pull-right">
+                                                    <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                                        <i class="fa fa-minus"></i>
+                                                    </button>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown">
+                                                            <i class="fa fa-wrench"></i>
+                                                        </button>
+                                                        <ul class="dropdown-menu" role="menu">
+                                                            <li><a href="#">Action</a></li>
+                                                            <li><a href="#">Another action</a></li>
+                                                            <li><a href="#">Something else here</a></li>
+                                                            <li class="divider"></li>
+                                                            <li><a href="#">Separated link</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="box-body">
+        
+                                            </div>
+        
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="box">
+                                            <div class="box-header" style="cursor: move;">
+                                                <h3 class="box-title">Calender</h3>
+                                                <div class="box-tools pull-right">
+                                                    <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                                        <i class="fa fa-minus"></i>
+                                                    </button>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown">
+                                                            <i class="fa fa-wrench"></i>
+                                                        </button>
+                                                        <ul class="dropdown-menu" role="menu">
+                                                            <li><a href="#">Action</a></li>
+                                                            <li><a href="#">Another action</a></li>
+                                                            <li><a href="#">Something else here</a></li>
+                                                            <li class="divider"></li>
+                                                            <li><a href="#">Separated link</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="box-body">
+        
+                                            </div>
+        
+                                        </div>
+                                    </div>
+                                </div>-->
+                    </section>
+                </div>
+                <div class="tab-pane" id="tab_2-2">
+
+
+                        <div class="col-md-12" style="padding-bottom: 1%;padding-right: 0">
+                                <button type="button" id="btnnewmedication" class="btn btn-primary waves-effect pull-right"
+                                    (click)="NewMedication()">New Medication</button>
+                            </div>
+                    <div class="chart-div" id="BPcontainer" style="margin-bottom: 10px;border:1px solid #ccc">
+
+                      
+                </div>   
+                
+                <div style="padding-left: 39%;padding-bottom: 1%">
+                        <div style="display:inline-flex">
+                                <div class=circle3 style="margin: 10px"></div><span style="margin: 5px;display:inline-block">Scheduled</span>
+                                <div class=circle1 style="margin: 10px"></div><span style="margin: 5px;display:inline-block">Taken</span>
+                                <div class=circle2 style="margin: 10px"></div><span style="margin: 5px;display:inline-block">Ignored</span>
+                        </div>
+                       
+
+                        
+                </div>  
+                <div class="text-center"  
+                *ngIf="medications != null && medications.length == 0">
+                <strong>No Data!!!!</strong>
+            </div>
+                       
+                    <table *ngIf="medications != null && medications.length > 0" class="table_custom1 table table-responsive table-hover deviceDetailsTable">
+                        <thead>
+                            <tr>
+                                <th class="PL15">Name</th>
+                                <th>Dosage</th>
+                                <th>Frequency</th>
+                                <th style="width: 20%">Duration In Days</th>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            <tr *ngFor="let medication of medications; let i = index">
+                                <td>{{medication.name}}</td>
+                                <td>{{medication.doage}}</td>
+                                <td>{{medication.frenquency}}</td>
+                                <td style="width: 20%">{{medication.duration}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                </div>
+                <div class="tab-pane" id="tab_3-2">
+
+                    <div class="accordion toggle_content" id="tableview">
+                        <div class="box box-default box-solid" style="margin-bottom:10px;margin-left: 0;">
+
+                            <div id="clinical_notes" class="collapse in" aria-expanded="true">
+                                <div class="box-body pl0 pr0">
+                                        
+                                        <div class="text-center"  
+                                        *ngIf="parsedNotes && parsedNotes.length == 0">
+                                        <strong>No Data!!!!</strong>
+                                    </div>
+                                    <table style="width: 100%" *ngIf="parsedNotes && parsedNotes.length > 0"
+                                        class="table_custom1 table table-responsive table-hover deviceDetailsTable">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 30%" class="PL15">Date</th>
+                                                <th style="width: 60%">Notes</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody >
+                                            <tr *ngFor="let note of parsedNotes; let i = index">
+                                                <td style="width: 30%">{{note.createDateTime}}</td>
+                                                <td style="width: 60%">{{note.note}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab_4-2">
+
+
+                    <div class="accordion toggle_content" id="tableview">
+                        <div class="box box-default box-solid" style="margin-bottom:10px;margin-left: 0;">
+                            <div id="medications" class="collapse in" aria-expanded="true">
+                                <div class="box-body pl0 pr0" >
+                                       
+                                        <div class="text-center"  
+                                        *ngIf="problemList != null && problemList.length == 0">
+                                        <strong>No Data!!!!</strong>
+                                    </div>
+                                    <table style="width: 100%" *ngIf="problemList !=null && problemList.length > 0"
+                                        class="table_custom1 table table-responsive table-hover deviceDetailsTable">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 5%"></th>
+                                                <th class="PL15">Name</th>
+                                                <th style="width: 50%" class="PL15">RecordedDate</th>
+                                                <!-- <th>Dosage</th>
+                                                                        <th>Frequency</th>
+                                                                        <th>Strength</th> -->
+                                            </tr>
+                                        </thead>
+                                        <tbody >
+                                            <tr *ngFor="let medication of problemList; let i = index">
+                                                <td style="width: 5%">
+                                                    <span *ngIf="medication.isProblem"
+                                                        class="text_circle circle_red">p</span>
+                                                    <span *ngIf="!medication.isProblem"
+                                                        class="text_circle circle_red">s</span></td>
+                                                <td>{{medication.name}}</td>
+                                                <td style="width: 50%">{{medication.recordedDate}}</td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<aside style="height: 78%;border-radius: 6px" class="control-sidebar control-sidebar-light" id="divRight">
+    <!-- <a class="closepanel close_panel" title="Close" href="#" data-toggle="control-sidebar">
+        <i class="fa fa-chevron-right"></i>
+    </a> -->
+
+    <div class="clinicalnotes">
+        <div class="" style="background:#fbfbfb;border-bottom: 2px solid #ef0808 !important;margin-bottom: 5px;">
+            <h3 class="sidebar_title">Conversations</h3>
+            <!--<a class="fa pull-right" title="Close" href="#" data-toggle="control-sidebar">
+                                <img src="dist/img/icons/Clear.png" style="margin: 12px 10px;width:22px;">
+                            </a>-->
+            <!-- <button data-toggle="modal" data-target="#addnotes" style="margin: 10px;" id=""
+                    class="btn btn-primary btn-flat pull-right" type="button">
+                    <span class="glyphicon glyphicon-plus"></span> &nbsp; Notes
+                </button> -->
+        </div>
+        <div class="row" style="padding:10px">
+            <div class="col-md-12 sidebar_height">
+                <div class="panel-group mb5" id="accordion">
+                    <div class="panel panel-default"  *ngFor="let note of notes; let i = index">
+                        <div class="panel-heading" style="background-color:#226174 !important">
+                            <h4 class="panel-title f14" style="color: white !important" data-toggle="collapse"
+                                data-parent="#accordion" [attr.href]="'#' + note.id" aria-expanded="false">
+                                <a aria-expanded="false" class="collapsed in">
+                                    {{note.createDateTime}}
+                                    <i class="fa fa-angle-down rotate-icon pull-right f25"></i>
+                                </a>
+                            </h4>
+                        </div>
+                        <div [attr.id]="note.id" class="panel-collapse collapse in" aria-expanded="false">
+                            <div class="panel-body nopadding">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label style="margin-top: 10px;">
+                                            Notes
+                                        </label>
+                                        <textarea cols="5" class="form-control no_border box_shadow" placeholder="Messages"
+                                        (change)="NotesTextChange($event,i)" required="">{{note.note}}</textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel-footer">
+                                <a class="btn btn-primary" (click)="ParseNotes(note.id)" role="button">Accept</a>
+                                <a class="btn btn-default pull-right" (click)="IgnoreNotes(note.id)"
+                                    role="button">Ignore</a>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</aside>
+
+<aside style="height:180px;top:auto;bottom: 0;border-radius: 6px;padding: 0"
+ class="control-sidebar1 control-sidebar-light control-sidebar-open" id="divcustom">
+    <!-- <a class="closepanel close_panel" (click)="hidecontrolbar()" title="Close">
+        <i class="fa fa-chevron-right"></i>
+    </a> -->
+    <div class="recommendedmedication">
+        <div class="" style="background:#fbfbfb;border-bottom: 2px solid #ef0808 !important;margin-bottom: 5px;">
+            <h3 class="sidebar_title">Recommendation</h3>
+
+        </div>
+        <div class="row" style="padding:10px">
+            <div class="col-md-12" style="max-height: 100px;overflow-y: auto">
+                    <div class="text-center"  
+                    *ngIf="suggestionMedication != null && suggestionMedication.length == 0">
+                    <strong>No Data!!!!</strong>
+                </div>
+                
+                <label *ngFor="let item of suggestionMedication; let i = index" class="container_1">
+                       
+                        {{item}}
+                        <input type="checkbox" checked="checked">
+                        <span class="checkmark"></span>
+                        <span
+                        class="text_circle circle_red">m</span>
+                      </label>
+                <!-- <ul>
+                    <li *ngFor="let item of suggestionMedication; let i = index">
+                        {{item}}
+                    </li>
+                </ul> -->
+            </div>
+        </div>
+    </div>
+</aside>
+
+
+    <a style="z-index: 1011" class="closepanel right_tool f30" title="Notes" href="#" data-toggle="control-sidebar">
+
+        <img src="../../../assets/icons/icons8-treatment-40 (1).png" />
+    </a>
+    <a style="bottom: 250px;z-index: 1011" (click)="showcontrolbar()" class="closepanel right_tool1 f30"
+        title="Recommended Medications">
+
+        <img src="../../../assets/icons/ai4.png" style="width:36px" />
+    </a>
+
+
+<!-- <div class="backdrop" [ngStyle]="{'display':showmedication}"></div>
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':showmedication}">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Medication</h4>
+                <button type="button" (click)="CloseMedicationPopup()" style="margin-top: -24px" class="close"
+                    data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+            </div>
+            <div class="modal-body">
+                <app-medication [medicalCondition]="parsedMedicalConditions" [patientExternalId]="patientExternalId"
+                    [medication]="parsedMedications" (loadNotes)="loadNotes()" (loadFollowups)="loadMedicationFollowups()"
+                    [suggestionMedication]="suggestionMedications"></app-medication>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="backdrop" [ngStyle]="{'display':shownewmedication}"></div>
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':shownewmedication}">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modaltitle">Medication</h4>
+                <button type="button" id="modalclose" (click)="CloseNewMedication()" style="margin-top: -24px" class="close"
+                    data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+            </div>
+            <div class="modal-body">
+                <app-medication [medicalCondition]="parsedMedicalConditions" [patientExternalId]="patientExternalId"
+                    [medication]="parsedMedications" (loadNotes)="loadNotes()" (loadMedications)="loadMedications()" (loadFollowups)="loadMedicationFollowups()"
+                    [suggestionMedication]="suggestionMedications"></app-medication>
+            </div>
+        </div>
+    </div>
+</div>

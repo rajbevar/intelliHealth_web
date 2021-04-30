@@ -1,0 +1,205 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <IsPackable>false</IsPackable>
+    <SpaRoot>ClientApp\</SpaRoot>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
+
+    <!-- Set this to true if you enable server-side prerendering -->
+    <BuildServerSideRenderer>false</BuildServerSideRenderer>
+    <RootNamespace>DoctorPortal</RootNamespace>
+    <UserSecretsId>fe8e7412-6d07-4fc9-b421-24da0d33b338</UserSecretsId>
+    <AssemblyName>DoctorPortal</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="ClientApp\dist\**" />
+    <Content Remove="$(SpaRoot)**" />
+    <Content Remove="ClientApp\dist\**" />
+    <EmbeddedResource Remove="ClientApp\dist\**" />
+    <None Remove="$(SpaRoot)**" />
+    <None Remove="ClientApp\dist\**" />
+    <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\dist\assets\alarm-clock-1.png" />
+    <None Remove="ClientApp\dist\assets\alarm-clock.png" />
+    <None Remove="ClientApp\dist\assets\alarm-clock2.png" />
+    <None Remove="ClientApp\dist\assets\avatar.png" />
+    <None Remove="ClientApp\dist\assets\avatar04.png" />
+    <None Remove="ClientApp\dist\assets\avatar2.png" />
+    <None Remove="ClientApp\dist\assets\avatar3.png" />
+    <None Remove="ClientApp\dist\assets\avatar5.png" />
+    <None Remove="ClientApp\dist\assets\boxed-bg.jpg" />
+    <None Remove="ClientApp\dist\assets\boxed-bg.png" />
+    <None Remove="ClientApp\dist\assets\chatbot_avatar.png" />
+    <None Remove="ClientApp\dist\assets\check.1.png" />
+    <None Remove="ClientApp\dist\assets\check.png" />
+    <None Remove="ClientApp\dist\assets\close.1.png" />
+    <None Remove="ClientApp\dist\assets\close.png" />
+    <None Remove="ClientApp\dist\assets\cycle.png" />
+    <None Remove="ClientApp\dist\assets\default-50x50.gif" />
+    <None Remove="ClientApp\dist\assets\font\Roboto\Apache License.txt" />
+    <None Remove="ClientApp\dist\assets\font\Roboto\Roboto-Black.ttf" />
+    <None Remove="ClientApp\dist\assets\font\Roboto\Roboto-BlackItalic.ttf" />
+    <None Remove="ClientApp\dist\assets\font\Roboto\Roboto-Bold.ttf" />
+    <None Remove="ClientApp\dist\assets\font\Roboto\Roboto-BoldItalic.ttf" />
+    <None Remove="ClientApp\dist\assets\font\Roboto\Roboto-Italic.ttf" />
+    <None Remove="ClientApp\dist\assets\font\Roboto\Roboto-Light.ttf" />
+    <None Remove="ClientApp\dist\assets\font\Roboto\Roboto-LightItalic.ttf" />
+    <None Remove="ClientApp\dist\assets\font\Roboto\Roboto-Medium.ttf" />
+    <None Remove="ClientApp\dist\assets\font\Roboto\Roboto-MediumItalic.ttf" />
+    <None Remove="ClientApp\dist\assets\font\Roboto\Roboto-Regular.ttf" />
+    <None Remove="ClientApp\dist\assets\font\Roboto\Roboto-Thin.ttf" />
+    <None Remove="ClientApp\dist\assets\font\Roboto\Roboto-ThinItalic.ttf" />
+    <None Remove="ClientApp\dist\assets\free-triangle-logo.png" />
+    <None Remove="ClientApp\dist\assets\i18n\en.json" />
+    <None Remove="ClientApp\dist\assets\i18n\fr.json" />
+    <None Remove="ClientApp\dist\assets\i18n\he.json" />
+    <None Remove="ClientApp\dist\assets\i18n\it.json" />
+    <None Remove="ClientApp\dist\assets\i18n\pt.json" />
+    <None Remove="ClientApp\dist\assets\i18n\ru.json" />
+    <None Remove="ClientApp\dist\assets\i18n\zh.json" />
+    <None Remove="ClientApp\dist\assets\icons.png" />
+    <None Remove="ClientApp\dist\assets\icons\Clear.png" />
+    <None Remove="ClientApp\dist\assets\icons\Filter.png" />
+    <None Remove="ClientApp\dist\assets\icons\Refresh Reset.png" />
+    <None Remove="ClientApp\dist\assets\icons\Search White.png" />
+    <None Remove="ClientApp\dist\assets\icons\user.jpg" />
+    <None Remove="ClientApp\dist\assets\icon_img.png" />
+    <None Remove="ClientApp\dist\assets\img\avatar.png" />
+    <None Remove="ClientApp\dist\assets\img\avatar04.png" />
+    <None Remove="ClientApp\dist\assets\img\avatar2.png" />
+    <None Remove="ClientApp\dist\assets\img\avatar3.png" />
+    <None Remove="ClientApp\dist\assets\img\avatar5.png" />
+    <None Remove="ClientApp\dist\assets\img\boxed-bg.jpg" />
+    <None Remove="ClientApp\dist\assets\img\boxed-bg.png" />
+    <None Remove="ClientApp\dist\assets\img\credit\american-express.png" />
+    <None Remove="ClientApp\dist\assets\img\credit\cirrus.png" />
+    <None Remove="ClientApp\dist\assets\img\credit\mastercard.png" />
+    <None Remove="ClientApp\dist\assets\img\credit\mestro.png" />
+    <None Remove="ClientApp\dist\assets\img\credit\paypal.png" />
+    <None Remove="ClientApp\dist\assets\img\credit\paypal2.png" />
+    <None Remove="ClientApp\dist\assets\img\credit\visa.png" />
+    <None Remove="ClientApp\dist\assets\img\default-50x50.gif" />
+    <None Remove="ClientApp\dist\assets\img\icons.png" />
+    <None Remove="ClientApp\dist\assets\img\photo1.png" />
+    <None Remove="ClientApp\dist\assets\img\photo2.png" />
+    <None Remove="ClientApp\dist\assets\img\photo3.jpg" />
+    <None Remove="ClientApp\dist\assets\img\photo4.jpg" />
+    <None Remove="ClientApp\dist\assets\img\user1-128x128.jpg" />
+    <None Remove="ClientApp\dist\assets\img\user2-160x160.jpg" />
+    <None Remove="ClientApp\dist\assets\img\user3-128x128.jpg" />
+    <None Remove="ClientApp\dist\assets\img\user4-128x128.jpg" />
+    <None Remove="ClientApp\dist\assets\img\user5-128x128.jpg" />
+    <None Remove="ClientApp\dist\assets\img\user6-128x128.jpg" />
+    <None Remove="ClientApp\dist\assets\img\user7-128x128.jpg" />
+    <None Remove="ClientApp\dist\assets\img\user8-128x128.jpg" />
+    <None Remove="ClientApp\dist\assets\login-bg.jpg" />
+    <None Remove="ClientApp\dist\assets\login_icon.jpg" />
+    <None Remove="ClientApp\dist\assets\logo.png" />
+    <None Remove="ClientApp\dist\assets\map1.PNG" />
+    <None Remove="ClientApp\dist\assets\medical-drug.png" />
+    <None Remove="ClientApp\dist\assets\old-handphone.png" />
+    <None Remove="ClientApp\dist\assets\pdf.png" />
+    <None Remove="ClientApp\dist\assets\photo1.png" />
+    <None Remove="ClientApp\dist\assets\photo2.png" />
+    <None Remove="ClientApp\dist\assets\photo3.jpg" />
+    <None Remove="ClientApp\dist\assets\photo4.jpg" />
+    <None Remove="ClientApp\dist\assets\profile_1.png" />
+    <None Remove="ClientApp\dist\assets\run.png" />
+    <None Remove="ClientApp\dist\assets\swim.png" />
+    <None Remove="ClientApp\dist\assets\user1-128x128.jpg" />
+    <None Remove="ClientApp\dist\assets\user1.png" />
+    <None Remove="ClientApp\dist\assets\user2-160x160.jpg" />
+    <None Remove="ClientApp\dist\assets\user3-128x128.jpg" />
+    <None Remove="ClientApp\dist\assets\user4-128x128.jpg" />
+    <None Remove="ClientApp\dist\assets\user5-128x128.jpg" />
+    <None Remove="ClientApp\dist\assets\user6-128x128.jpg" />
+    <None Remove="ClientApp\dist\assets\user7-128x128.jpg" />
+    <None Remove="ClientApp\dist\assets\user8-128x128.jpg" />
+    <None Remove="ClientApp\dist\assets\walk.png" />
+    <None Remove="ClientApp\dist\assets\wallpaper.png" />
+    <None Remove="ClientApp\dist\favicon.ico" />
+    <None Remove="ClientApp\dist\fontawesome-webfont.eot" />
+    <None Remove="ClientApp\dist\fontawesome-webfont.svg" />
+    <None Remove="ClientApp\dist\fontawesome-webfont.ttf" />
+    <None Remove="ClientApp\dist\fontawesome-webfont.woff" />
+    <None Remove="ClientApp\dist\fontawesome-webfont.woff2" />
+    <None Remove="ClientApp\dist\glyphicons-halflings-regular.eot" />
+    <None Remove="ClientApp\dist\glyphicons-halflings-regular.svg" />
+    <None Remove="ClientApp\dist\glyphicons-halflings-regular.ttf" />
+    <None Remove="ClientApp\dist\glyphicons-halflings-regular.woff" />
+    <None Remove="ClientApp\dist\glyphicons-halflings-regular.woff2" />
+    <None Remove="ClientApp\dist\index.html" />
+    <None Remove="ClientApp\dist\ionicons.eot" />
+    <None Remove="ClientApp\dist\ionicons.svg" />
+    <None Remove="ClientApp\dist\ionicons.ttf" />
+    <None Remove="ClientApp\dist\ionicons.woff" />
+    <None Remove="ClientApp\dist\main-es2015.js" />
+    <None Remove="ClientApp\dist\main-es2015.js.map" />
+    <None Remove="ClientApp\dist\main-es5.js" />
+    <None Remove="ClientApp\dist\main-es5.js.map" />
+    <None Remove="ClientApp\dist\polyfills-es2015.js" />
+    <None Remove="ClientApp\dist\polyfills-es2015.js.map" />
+    <None Remove="ClientApp\dist\polyfills-es5.js" />
+    <None Remove="ClientApp\dist\polyfills-es5.js.map" />
+    <None Remove="ClientApp\dist\Roboto-Bold.ttf" />
+    <None Remove="ClientApp\dist\Roboto-Light.ttf" />
+    <None Remove="ClientApp\dist\Roboto-Medium.ttf" />
+    <None Remove="ClientApp\dist\Roboto-Regular.ttf" />
+    <None Remove="ClientApp\dist\runtime-es2015.js" />
+    <None Remove="ClientApp\dist\runtime-es2015.js.map" />
+    <None Remove="ClientApp\dist\runtime-es5.js" />
+    <None Remove="ClientApp\dist\runtime-es5.js.map" />
+    <None Remove="ClientApp\dist\scripts.js" />
+    <None Remove="ClientApp\dist\scripts.js.map" />
+    <None Remove="ClientApp\dist\styles-es2015.js" />
+    <None Remove="ClientApp\dist\styles-es2015.js.map" />
+    <None Remove="ClientApp\dist\styles-es5.js" />
+    <None Remove="ClientApp\dist\styles-es5.js.map" />
+    <None Remove="ClientApp\dist\vendor-es2015.js" />
+    <None Remove="ClientApp\dist\vendor-es2015.js.map" />
+    <None Remove="ClientApp\dist\vendor-es5.js" />
+    <None Remove="ClientApp\dist\vendor-es5.js.map" />
+    <None Remove="ClientApp\dist\web.config" />
+  </ItemGroup>
+
+  <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
+    <!-- Ensure Node.js is installed -->
+    <Exec Command="node --version" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
+    </Exec>
+    <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
+    <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+  </Target>
+
+  <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
+    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build --prod" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build:ssr -- --prod" Condition=" '$(BuildServerSideRenderer)' == 'true' " />
+
+    <!-- Include the newly-built files in the publish output -->
+    <ItemGroup>
+      <DistFiles Include="$(SpaRoot)dist\**; $(SpaRoot)dist-server\**" />
+      <DistFiles Include="$(SpaRoot)node_modules\**" Condition="'$(BuildServerSideRenderer)' == 'true'" />
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>%(DistFiles.Identity)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+
+</Project>

@@ -1,0 +1,27 @@
+.circle_red {
+    background: #db4343;
+}
+
+.text_circle {
+    color: #fff;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    font-size: 12px;
+}
+
+.modal-header .close {
+    margin-top: -24px !important;
+}
+
+
+.modal-header button.close {  
+    border-radius: 19% !important;
+   
+}
+
+.swal2-container {
+z-index: 1140 !important
+}

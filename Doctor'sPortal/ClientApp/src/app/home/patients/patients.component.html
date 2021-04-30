@@ -1,0 +1,106 @@
+
+<div class="container">
+        <div class="content-wrapper" >
+                <div class="row form-group collapse filter_panel callout-default" id="filter-row">
+                        <div class="col-md-12" style="padding:20px 0 0px 20px">
+                            <div class="w222 nopadding pull-left margin_5">
+                                <div class="form-group">
+                                    <label class="text-blue pull-left" style="margin-top: 5px;">Clinic: &nbsp;</label>
+                                    <div class="pull-left cust_drop" style="position:relative">
+                                        <div style="display: inline-block;" class="dropdown">
+                                            <select class="disp_inline form-control blue_box arrow" style="height: 36px; margin: 0px;padding: 0px 10px;">
+                                                <option value="10" selected="selected">Search Clinic</option>
+                                                <option value="20">Clinic Name 1</option>
+                                                <option value="50">Clinic Name 2</option>
+                                                <option value="100">Clinic Name 3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w222 nopadding pull-left margin_5" style="margin-left:10px">
+                                <div class="form-group" style="display: inline-flex;">
+                                    <label class="text-blue pull-left" style="margin-top: 5px;">Therapyst: &nbsp;</label>
+                                    <select class="disp_inline form-control blue_box arrow" style="height: 36px; margin: 0px 0 0 10px;padding: 0px 10px;">
+                                        <option value="10" selected="selected">Search Therapyst</option>
+                                        <option value="20">Therapyst 1</option>
+                                        <option value="50">Therapyst 2</option>
+                                        <option value="100">Therapyst 3</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="nopadding pull-left" style="margin-left:30px">
+                                <button type="button" id="filter-button" style="height:36px;" class="btn btn-default1 fa_blue margin_5 no-radius">
+                                    <img src="dist/img/icons/Refresh%20Reset.png" style="margin-right: 10px;">Reset All
+                                </button>
+                                <button type="button" id="filter-button" style="height:36px;" class="btn btn-default1 fa_blue margin_5 no-radius">
+                                    <img src="dist/img/icons/Filter.png" style="margin-right: 10px;">Filter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+  
+
+<div>
+
+ 
+
+    <div class="row list-item-container list_item_border" style="margin-left: 2px;
+    margin-right: 2px;
+    margin-top: 2px;" *ngFor="let patient of patients; let i = index" (click)="myClickFunction(patient.externalId)">
+            <div class="col-md-12 list-item-header cp" id="{{patient.externalId}}">
+                    <div class="col-md-9 col-sm-6" style="padding-left:5px;">
+                            <span>{{patient.lastname}}  {{patient.firstname}} </span>
+                        </div>
+                     
+                
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-md-4 list-item" style="padding-left:15px;">
+                <label class="displayR" style="margin-bottom:0;">
+                    <span style="width: 75px;" class="item-list-key label_txt">ID: </span>
+                    <span class="item-list-value">
+                        <span class="item-list-value">
+                            <span> AAAA-111</span>
+                        </span>
+                    </span>
+                </label>
+                <label class="displayR" style="margin-bottom:0;">
+                    <span style="width: 75px;" class="item-list-key label_txt">Email: </span> <span class="item-list-value">{{patient.email}}</span>
+                </label>
+
+            </div>
+
+            <div class="col-md-4 list-item">
+                <label class="displayR" style="margin-bottom:0;">
+                    <span class="item-list-key label_txt" style="min-width:200px">Current Therapy: </span> <span class="item-list-value">1,4</span>
+                </label>
+                <label class="displayR" style="margin-bottom:0;">
+                    <span class="item-list-key label_txt" style="min-width:200px">Recommended Therapy: </span> <span class="item-list-value ">2,4</span>
+                </label>
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-md-4 list-item">
+                <label class="displayR" style="margin-bottom:0;">
+                    <span class="item-list-key label_txt">Status:</span> <span class="item-list-value">
+                        <span class="">Active</span>
+                    </span>
+                </label>
+                <label class="displayR" style="margin-bottom:0;">
+                    <span class="item-list-key label_txt">Pain Relief:</span> <span class="item-list-value">50%</span>
+                </label>
+            </div>
+        </div>
+      
+
+</div> 
+            </div>
+    <!-- <section class="content-header">        
+               
+               
+
+
+    </section> -->
+
+</div>

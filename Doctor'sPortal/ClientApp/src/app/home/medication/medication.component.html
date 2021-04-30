@@ -1,0 +1,226 @@
+<div class="row">
+    <div class="col-md-12">
+        <!-- <div class="">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a class="caps" href="#tab_1" data-toggle="tab"
+                        style="font-weight: 600; color: #5d5d5d;font-size: 95%;" aria-expanded="true">Medical
+                        Conditions</a>
+                </li>
+                <li class="">
+                    <a class="caps" href="#tab_2" data-toggle="tab"
+                        style="font-weight: 600; color: #5d5d5d;font-size: 95%;" aria-expanded="false">Medications</a>
+                </li>
+            </ul>
+            <div class="tab-content" style="background: white">
+                <div class="tab-pane active" id="tab_1">
+                    <div class="row">
+                        <div class="col-md-12">
+                                <div class="text-center"
+                                *ngIf="medicalConditionData !=null && medicalConditionData.length == 0">
+                                <strong>No Data!!!!</strong>
+                            </div>
+                            <table width="100%" *ngIf="medicalConditionData!=null && medicalConditionData.length > 0"
+                                class="table_custom1 table_custom2 table table-bordered table-hover font_semibold table_custom2 mb-20">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center" width="30px"></th>
+                                        <th class="f15">Problems &amp; Symptoms</th>                                        
+                                        <th class="text-center" width="50px"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let medicalCondition of medicalConditionData; let i = index">
+                                        <td>
+                                            <span *ngIf="medicalCondition.isProblem"
+                                                class="text_circle circle_red">p</span>
+                                            <span *ngIf="medicalCondition.isSymptom"
+                                                class="text_circle circle_red">s</span></td>
+                                        <td (click)="onSymptomSelect(i)">                                          
+                                            <input style="height:30px" (change)="symptomChanged($event,i)"
+                                                class="form-control border1px" type="text"
+                                                value="{{medicalCondition.text}}" />
+                                        </td>                                        
+                                        <td class="text-center" (click)="RemoveSymptom(i)"><span class="fa_blue"><i
+                                                    style="font-size: 18px !important;color:#7e7e7e" class="fa fa-times"
+                                                    aria-hidden="true"></i></span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div *ngIf="medicalConditionData !=null && medicalConditionData.length > 0">
+                                <button type="button" class="btn btn-primary waves-effect pull-right"
+                                    (click)="saveSymptoms()">Submit</button>
+
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab_2">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-12" style="padding-bottom: 1%;padding-right: 0">
+                                <button type="button" class="btn btn-primary waves-effect pull-right"
+                                    (click)="AddNewMedication()">New Medication</button>
+                            </div>
+                            <table style="margin-bottom:10px" width="100%"
+                                class="addmed_table table_custom1 table_custom2 table table-hover font_semibold table_custom2 mb-20 table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th width="35%" class="f15">Name</th>
+                                        <th width="10%" class="f15">Form</th>
+                                        <th width="13%" class="f15 text-center">Dosage</th>
+                                        <th width="15%" class="f15 text-center">Mode</th>
+                                        <th width="22%" class="f15 text-center">Frequency</th>
+                                        <th class="f15 text-center">Duration</th>
+                                        <th class="f15 text-center"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let medication of medicationData; let i = index">
+                                        <td><input style="height:30px" class="form-control border_1px" type="text"
+                                                (change)="MedicationNameChanged($event,i)" value="{{medication.text}}">
+                                        </td>
+                                        <td><input style="height:30px" class="form-control border_1px" type="text"
+                                                (change)="MedicationFormChanged($event,i)" value="{{medication.form}}">
+                                        </td>
+                                        <td><input style="height:30px" class="form-control border_1px" type="text"
+                                                (change)="MedicationDosageChanged($event,i)"
+                                                value="{{medication.dosage}}"></td>
+                                        <td class="text-center"><input style="height:30px"
+                                                class="form-control border_1px" type="text"
+                                                (change)="MedicationModeChanged($event,i)"
+                                                value="{{medication.routeOrMode}}"></td>
+                                        <td><input style="height:30px" class="form-control border_1px" type="text"
+                                                (change)="MedicationFrequencyChanged($event,i)"
+                                                value="{{medication.frequency}}"></td>
+                                        <td><input style="height:30px" (change)="MedicationDurationChanged($event,i)"
+                                                value="{{medication.durationInNumber}}" class="form-control border_1px"
+                                                type="number"></td>
+                                        <td class="text-center" (click)="RemoveMedication(i)"><span class="fa_blue"><i
+                                                    style="font-size: 18px !important;color:#7e7e7e" class="fa fa-times"
+                                                    aria-hidden="true"></i></span></td>
+
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                            <div class="col-md-12" style="padding-right: 0">
+                                <button type="button" class="btn btn-primary waves-effect pull-right"
+                                    (click)="SaveMedication()">Submit</button>
+                            </div>
+                            <h4 style="font-weight: bold;font-weight: 15px">Recommended
+                                Medications</h4>   
+                                <div class="text-center"
+                                *ngIf="suggestionMedication !=null && suggestionMedication.length == 0">
+                                <strong>No Data!!!!</strong>
+                            </div>                      
+
+                            <table  *ngIf="suggestionMedication !=null && suggestionMedication.length > 0" style="margin-bottom:10px;margin-top: 10px" width="100%"
+                                class="addmed_table table_custom1 table_custom2 table table-hover font_semibold table_custom2 mb-20 table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th width="35%" class="f15">Name</th>
+                                        <th width="10%" class="f15">Form</th>
+                                        <th width="13%" class="f15 text-center">Dosage</th>
+                                        <th width="15%" class="f15 text-center">Mode</th>
+                                        <th width="22%" class="f15 text-center">Frequency</th>
+                                        <th class="f15 text-center">Duration</th>
+                                        <th class="f15 text-center"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let medication of suggestionMedication; let i = index">
+                                        <td width="35%">{{medication.text}}</td>
+                                        <td width="10%">{{medication.form}}</td>
+                                        <td width="13%">{{medication.dosage}}</td>
+                                        <td width="15%" class="text-center">
+                                            {{medication.routeOrMode}}</td>
+                                        <td width="22%">{{medication.frequency}}</td>
+                                        <td width="22%">{{medication.durationInNumber}}</td>
+                                        <td class="text-center" (click)="AddSuggestionMedication(i)"><span
+                                                class="fa_blue"><i style="font-size: 18px !important;color:#7e7e7e"
+                                                    class="fa fa-plus" aria-hidden="true"></i></span></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>                          
+                          
+
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div> -->
+
+        <div class="">
+                <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-12" style="padding-bottom: 1%;padding-right: 0">
+                                <button type="button" class="btn btn-primary waves-effect pull-right"
+                                    (click)="AddNewMedication()" id="addnewmedication">New Medication</button>
+                            </div>
+                            <table style="margin-bottom:10px" width="100%"
+                                class="addmed_table table_custom1 table_custom2 table table-hover font_semibold table_custom2 mb-20 table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th width="35%" class="f15">Name</th>
+                                        <th width="10%" class="f15">Form</th>
+                                        <th width="13%" class="f15 text-center">Dosage</th>
+                                        <th width="15%" class="f15 text-center">Mode</th>
+                                        <th width="22%" class="f15 text-center">Frequency</th>
+                                        <th class="f15 text-center">Duration</th>
+                                        <th class="f15 text-center"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let medication of medicationData; let i = index">
+                                        <td><input style="height:30px" class="form-control border_1px" type="text" [attr.id]="'inputName_' + medication.iteration"
+                                                (change)="MedicationNameChanged($event,i)" value="{{medication.text}}">
+                                        </td>
+                                        <td><input style="height:30px" class="form-control border_1px" type="text"  [attr.id]="'inputForm_' + medication.iteration"
+                                                (change)="MedicationFormChanged($event,i)" value="{{medication.form}}">
+                                        </td>
+                                        <td><input style="height:30px" class="form-control border_1px" type="text"  [attr.id]="'inputDosage_' + medication.iteration"
+                                                (change)="MedicationDosageChanged($event,i)"
+                                                value="{{medication.dosage}}"></td>
+                                        <td class="text-center"><input style="height:30px"  [attr.id]="'inputMode_' + medication.iteration"
+                                                class="form-control border_1px" type="text"
+                                                (change)="MedicationModeChanged($event,i)"
+                                                value="{{medication.routeOrMode}}"></td>
+                                        <td><input style="height:30px" class="form-control border_1px" type="text"  [attr.id]="'inputFrequency_' + medication.iteration"
+                                                (change)="MedicationFrequencyChanged($event,i)"
+                                                value="{{medication.frequency}}"></td>
+                                        <td><input style="height:30px" (change)="MedicationDurationChanged($event,i)"  [attr.id]="'inputDuration_' + medication.iteration"
+                                                value="{{medication.durationInNumber}}" class="form-control border_1px"
+                                                type="number"></td>
+                                        <td class="text-center" (click)="RemoveMedication(i)"><span class="fa_blue"><i
+                                                    style="font-size: 18px !important;color:#7e7e7e" class="fa fa-times"
+                                                    aria-hidden="true"></i></span></td>
+
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                            <div class="col-md-12" style="padding-right: 0">
+                                <button type="button" class="btn btn-primary waves-effect pull-right"
+                                    (click)="SaveMedication()" id="savemedication">Submit</button>
+                            </div>                                                    
+                          
+
+                        </div>
+
+
+
+                    </div>
+            </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="col-md-12 login_bg" style="height: 100%">
+    <div  style="background: url('../../assets/login_icon.jpg') no-repeat #e4e3e3db;background-size: 100%;opacity:0.5;background-position: top center;height:100%;width:100%;position: absolute;top:0;z-index: -1"></div>
+   
+   
+    <div class="login-box-body">
+        <p class="login-box-msg">Sign in to start your session</p>
+    
+        <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+        
+            <div class="form-group has-feedback" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+                <input type="text" class="form-control" placeholder="UserName" name="username" [(ngModel)]="model.username" #username="ngModel" required />
+                <span class="glyphicon glyphicon-user form-control-feedback" style="line-height:40px"></span>
+                <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
+            </div>
+            <div style="margin-top:20px" class="form-group has-feedback" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+                <input type="password" placeholder="Password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+                <span class="glyphicon glyphicon-lock form-control-feedback" style="line-height:40px"></span>
+                <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
+            </div>    
+        
+          <div class="row"  style="margin-top:50px">   
+            <!-- /.col -->
+            <div class="col-xs-12">
+              <button type="submit"  style="padding: 9px 16px;width:200px;margin:0 auto"  class="btn btn-block btn-blue btn-flat" (click)="login()">Sign In</button>
+            </div>
+            <!-- /.col -->
+          </div>
+         
+        </form>
+        <div class="row">
+            <div class="col-md-12 text-center" style="margin:20px 0">
+                <a [routerLink]="['/forgotpassword']">forgot password?</a><br>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
